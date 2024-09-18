@@ -1,125 +1,124 @@
-﻿@charset "utf-8";
-
-/*
-   New Perspectives on HTML5 and CSS3, 7th Edition
-   Tutorial 2
-   Case Problem 4
-   
-   The Great Lakescape Lodge Layout Styles
-   Filename: lake_layout.css
-
-*/
-
+@charset "utf-8";
 
 /* Structural Styles */
 
 body {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 1020px;
-	min-width: 640px;
-	
-	grid-template-columns: 70% 30%;
-  
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1020px;
+    min-width: 640px;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto; /* Four rows: header image, navigation, content, footer */
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-areas: 
+        "header"
+        "nav"
+        "content"
+        "footer";
+    gap: 0;
+	position: relative;
 }
-body > header >nav >ul{
-	width: 5%;
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%; /* Full height of the body */
+    width: 20px; /* Width of the sidebars */
+    background-color: #2a584f; /* Example background color for the sidebars */
 }
+
+body::before {
+    left: 0; /* Position to the left of the body */
+}
+
+body::after {
+    right: 0; /* Position to the right of the body */
+}
+body > header {
+    grid-area: header;
+    /* position: relative; Positioning context for the navigation */
+}
+
 body > header > img {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+head > nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    width: 100%; /* Match the width of the header image */
+}
+
+header > nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 	width: 100%;
-	display: block;
-	margin: 0;
+    justify-content: space-around;
+}
+
+header > nav > ul > li {
+	/* display: table-cell; */
+    text-align: center;
+}
+
+header > nav a {
+    display: block;
+    width: 100%;
+	text-decoration: none;
+}
+
+body > section#content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 70% 30%; /* Two columns: leftcol and rightcol */
+    grid-template-rows: auto; /* Rows will size to content */
+    grid-gap: 0; /* No gap between columns */
 }
 
 body > section#leftcol {
-	width: 70%;
-	float: left;
-height: 1080PX;
-	margin-left: 0%;
-	margin-right: 0%;
-	grid-column: 1;
+    grid-column: 1 / 2;
+    padding: 20px;
 }
 
 body > section#rightcol {
-	width: 28.00%;
-	height: 1080PX;
-	float: right;
-	margin-right: 2%;
-	margin-left: 10;
-	grid-column: 2;
+    grid-column: 2 / 3;
+    padding: 20px;
 }
 
 footer {
-	clear: both;
- 
+    grid-area: footer;
+    padding: 20px;
 }
 
-/* body > .sidebar {
-    background-color: #ccc; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Additional Styles */
 
+section#leftcol aside {
+    width: 42%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 20px;
 }
 
-body > .sidebar:first-of-type {
-    grid-area: 1 / 1 / 4 / 2; 
+section#leftcol img {
+    width: 100%;
+    display: block;
 }
 
-body > .sidebar:last-of-type {
-    grid-area: 1 / 3 / 4 / 4; 
-} */
-
-
+/* Box-sizing reset for all elements */
 address, article, aside, blockquote, body, cite, 
 div, dl, dt, dd, em, figcaption, figure, footer, 
 h1, h2, h3, h4, h5, h6, header, html, img, 
 li, main, nav, ol, p, section, span, ul {
-
-   -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-   box-sizing: border-box;  
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;  
 }
-
-
-/* Header Navigation */
-
-header > nav {
-	display: table;
-	width: 100%;
-}
-
-header > nav > ul {
-	display: table-row;
-	list-style-type: none;
-}
-
-header > nav > ul > li {
-	display: table-cell;
-	text-align: center;
-
-}
-
-header > nav a {
-	display: block;
-	width: 100%;
-}
-
-
-/* Section Layout */
-
-section#leftcol aside {
-	width: 42%;
-	float: left;
-	margin-left: 2.5%;
-	margin-right: 2.5%;
-	margin-bottom: 20px;
-}
-
-
-section#leftcol img {
-	width: 100%;
-	display: block;
-}
-
-
