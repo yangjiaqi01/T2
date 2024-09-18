@@ -1,0 +1,115 @@
+﻿@charset "utf-8";
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   Great Lakescape Lodge Style Sheet
+   Author: 
+   Date:   
+   
+   Filename: lake_styles.css
+
+*/
+
+/* 在 lake_styles.css 文件中添加或修改以下样式 */
+
+body > header {
+   background-color: rgb(120, 74, 120); /* 设置您想要的背景颜色 */
+   
+ }
+ body > section#leftcol{
+   background-color: black;
+   color: aliceblue;
+ }
+ body > section#rightcol{
+   background-color: rgb(88, 45, 90);
+   color: aliceblue;
+ }
+ .a {
+  color: hsla(0,0%,100%,0.5); 
+  text-decoration: none; 
+}
+.b{
+  color: pink; 
+  text-decoration: none; 
+}
+.left{
+  background-color: rgb(227,162,142);
+  font-size: 15px;  
+  font-size: 0.9em;
+  font-size: 90%;
+  margin-left: 30px;
+  margin-right: 40px;
+}
+.right{
+  background-color: rgb(209,187,114);
+  font-size: 15px;  
+  font-size: 0.8em;
+  font-size: 90%;
+  margin-left: 70px;
+  margin-right: 50px;
+  
+}
+ @font-face {
+    font-family: myFirstFont;
+    src: url(cac_champagne.ttf);
+  }
+  @font-face {
+    font-family: mySecondFont;
+    src: url(cac_champagne.woff);
+  }
+  h1[title="demo1"]{
+    font-family: mySecondFont;
+    font-size: 3em;
+
+  }
+  h1[title="demo2"]{
+  font-size: large;
+  text-align:center;
+  }
+  h2[title="demo"]{
+    font-family: myFirstFont;
+    font-size: 3em;
+
+  }
+  h2[title="demo2"]{
+  font-size: large;
+  text-align:center;
+  }
+  /* h2[title="demo"]{
+  font-family: myFirstFont;
+  }
+  h2[title="demo3"]{
+  font-size: small;
+  text-align:left;
+  
+  } */
+  body > section#rightcol>nav > ul > li{
+    list-style-type: none;
+  }
+  body>section>p{
+    font-size: 15px;  
+  font-size: 0.9em;
+  font-size: 90%; 
+  margin-left: 30px;
+  margin-right: 30px;
+  }
+  body>section>aside>h1{
+    text-align: center;
+  }
+  body>section>aside>a{
+    color: pink;
+  }
+  footer{
+    background-color:rgb(77,70,78) ;
+    color: aliceblue;
+    text-align: center;
+  }
+  body > section#rightcol>blockquote{
+    color: blueviolet;
+  }
+  body > section#leftcol>aside>p{
+  
+    block-size: 5%;
+  }
